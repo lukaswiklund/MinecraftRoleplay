@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [{
+            "label": "Package",
+            "type": "shell",
+            "command": "mvn package -f ./pom.xml",
+            "group": "build",
+        },
+        {
+            "label": "Move Plugin",
+            "type": "shell",
+            "dependsOn": "Package",
+            "command": "mv ./target/MinecraftRoleplay*.jar ./test_server/plugins/MinecraftRoleplay.jar",
+            "group": "build",
+        },
+        {
+            "label": "Start Test Server",
+            "type": "shell",
+            "dependsOn": "Move Plugin",
+            "command": "cd ./test_server && java -Xms2G -Xmx4G -jar server.jar nogui",
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+        },
+    ]
+}

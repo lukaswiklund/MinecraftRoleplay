@@ -1,0 +1,11 @@
+name: MinecraftRoleplay
+version: 0.1
+main: se.wiklund.minecraftroleplay.Main
+
+commands:
+  money:
+    usage: /money
+    description: Mange your bank account
+  company:
+    usage: /company
+    description: Manage your companies

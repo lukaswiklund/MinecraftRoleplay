@@ -1,0 +1,13 @@
+logs/
+plugins/
+world**/
+
+banned-*.json
+bukkit.yml
+commands.yml
+help.yml
+ops.json
+permissions.yml
+spigot.yml
+usercache.json
+whitelist.json
