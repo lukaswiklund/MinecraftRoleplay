@@ -8,6 +8,7 @@ commands.yml
 help.yml
 ops.json
 permissions.yml
+server.properties
 spigot.yml
 usercache.json
 whitelist.json
