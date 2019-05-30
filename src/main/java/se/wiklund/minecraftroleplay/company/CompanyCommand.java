@@ -65,8 +65,7 @@ public class CompanyCommand implements CommandExecutor {
 				player.sendMessage(main.getConfig().getString(ConfigConstants.Text.YOUR_COMPANIES));
 				for (Company company : companies) {
 					String money = MoneyUtils.getMoneyDisplay(company.money, main.getConfig());
-					String message = listItemTemplate.replace("[companyName]", company.name).replace("[companyMoney]",
-							money);
+					String message = listItemTemplate.replace("[companyName]", company.name).replace("[companyMoney]", money);
 					player.sendMessage(message);
 				}
 				return true;
