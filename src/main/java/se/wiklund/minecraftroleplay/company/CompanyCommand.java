@@ -29,7 +29,7 @@ public class CompanyCommand implements CommandExecutor {
 	private static final String[][] COMMAND_DESCRIPTIONS = new String[][] {
 			new String[] { "company list", "List your companies" },
 			new String[] { "company info <Name>", "See company info" },
-			new String[] { "company info <Name>", "See detailed information about your company" },
+			new String[] { "company details <Name>", "See detailed information about your company" },
 			new String[] { "company register <Name>", "Register a new company" },
 			new String[] { "company deregister <Name>", "Deregister a company" },
 		};
