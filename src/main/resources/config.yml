@@ -1,3 +1,6 @@
+Locale: "en_US"
+TimeZone: "GMT"
+
 Currency_Unit: $
 Currency_PlaceBefore: true
 Currency_SpaceBetween: false

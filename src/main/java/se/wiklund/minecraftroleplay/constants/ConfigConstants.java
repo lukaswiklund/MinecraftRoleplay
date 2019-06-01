@@ -1,6 +1,10 @@
 package se.wiklund.minecraftroleplay.constants;
 
 public class ConfigConstants {
+
+	public static final String LOCALE = "Locale";
+	public static final String TIME_ZONE = "TimeZone";
+
 	public static class Currency {
 		public static final String UNIT = "Currency_Unit";
 		public static final String PLACE_BEFORE = "Currency_PlaceBefore";

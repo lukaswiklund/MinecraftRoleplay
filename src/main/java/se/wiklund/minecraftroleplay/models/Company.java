@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -25,8 +25,8 @@ public class Company {
 	public String name;
 	public BigDecimal money;
 	public String description;
-	public final Timestamp registerDate;
-	public Timestamp editDate;
+	public final Instant registerDate;
+	public Instant editDate;
 
 	private Company(ResultSet resultSet) throws SQLException {
 		this.id = resultSet.getInt("id");
@@ -34,8 +34,8 @@ public class Company {
 		this.name = resultSet.getString("name");
 		this.money = resultSet.getBigDecimal("money");
 		this.description = resultSet.getString("description");
-		this.registerDate = resultSet.getTimestamp("registerDate");
-		this.editDate = resultSet.getTimestamp("editDate");
+		this.registerDate = resultSet.getTimestamp("registerDate").toInstant();
+		this.editDate = resultSet.getTimestamp("editDate").toInstant();
 	}
 
 	public boolean save(Database database) {

@@ -1,7 +1,8 @@
 package se.wiklund.minecraftroleplay.company;
 
-import java.util.ArrayList;
+import java.time.format.FormatStyle;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.lang.WordUtils;
@@ -19,10 +20,11 @@ import se.wiklund.minecraftroleplay.constants.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyUtils;
 import se.wiklund.minecraftroleplay.models.Company;
 import se.wiklund.minecraftroleplay.utils.ArrayUtils;
+import se.wiklund.minecraftroleplay.utils.BookTemplateUtils;
 import se.wiklund.minecraftroleplay.utils.BookUtils;
+import se.wiklund.minecraftroleplay.utils.DateTimeUtils;
 import se.wiklund.minecraftroleplay.utils.Error;
 import se.wiklund.minecraftroleplay.utils.JsonUtils;
-import se.wiklund.minecraftroleplay.utils.StringUtils;
 
 public class CompanyCommand implements CommandExecutor {
 
@@ -93,7 +95,11 @@ public class CompanyCommand implements CommandExecutor {
 
 				ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);
 				BookMeta meta = (BookMeta) book.getItemMeta();
-				BookUtils.setPages(meta, new ArrayList<String>(Arrays.asList(JsonUtils.splitJsonArrayString(company.description))));
+				String[] pages = JsonUtils.splitJsonArrayString(company.description);
+				if (pages.length == 0) {
+					pages = BookTemplateUtils.getPagesFromTemplate("company_info_empty", null, main);
+				}
+				BookUtils.setPages(meta, Arrays.asList(pages));
 				book.setItemMeta(meta);
 				BookUtils.openBook(book, player);
 				
@@ -110,9 +116,21 @@ public class CompanyCommand implements CommandExecutor {
 					Error.send(sender, "You don't own that company!");
 					return true;
 				}
-				player.sendMessage("§2" + company.name);
-				player.sendMessage("§2" + StringUtils.generateString('-', company.name.length()));
-				player.sendMessage("§2Company bank account: §e" + MoneyUtils.getMoneyDisplay(company.money, main.getConfig()));
+
+				String[] pages = BookTemplateUtils.getPagesFromTemplate("company_details", new HashMap<String, String>() {{
+					put("[name]", company.name);
+					put("[money]", MoneyUtils.getMoneyDisplay(company.money, main.getConfig()));
+					put("[registerDate]", DateTimeUtils.formatDate(company.registerDate, FormatStyle.MEDIUM, main.getTimeZone(), main.getLocale()));
+				}}, main);
+
+				if (pages == null) return true;
+
+				ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);
+				BookMeta meta = (BookMeta) book.getItemMeta();
+				BookUtils.setPages(meta, Arrays.asList(pages));
+				book.setItemMeta(meta);
+				BookUtils.openBook(book, player);
+
 				return true;
 			}
 

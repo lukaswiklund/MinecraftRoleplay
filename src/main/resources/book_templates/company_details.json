@@ -1,0 +1,39 @@
+[
+    [
+        {
+            "text": "[name]\n\n",
+            "color": "dark_green",
+            "bold": true
+        },
+        {
+            "text": "Company Details\n",
+            "color": "reset",
+            "bold": false
+        },
+        {
+            "text": "-------------------\n\n",
+            "color": "reset",
+            "bold": false
+        },
+        {
+            "text": "Bank:\n",
+            "color": "dark_green",
+            "bold": false
+        },
+        {
+            "text": "[money]\n\n",
+            "color": "gold",
+            "bold": false
+        },
+        {
+            "text": "Register Date:\n",
+            "color": "dark_green",
+            "bold": false
+        },
+        {
+            "text": "[registerDate]",
+            "color": "gold",
+            "bold": false
+        }
+    ]
+]

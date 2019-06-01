@@ -25,7 +25,7 @@ public class NewPlayerListener implements Listener {
 			Account.createFromPlayer(e.getPlayer(), database);
 		}
 		else {
-			account.lastLogin = Timestamp.from(Instant.now());
+			account.lastLogin = Instant.now();
 			account.save(database);
 			return;
 		}
