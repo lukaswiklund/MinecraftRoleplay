@@ -17,13 +17,14 @@ public class Company {
 	private static final String SQL_GET_BY_ID = "SELECT * FROM companies WHERE id = ? LIMIT 1";
 	private static final String SQL_GET_BY_OWNER_ID = "SELECT * FROM companies WHERE ownerId = ?";
 	private static final String SQL_GET_BY_NAME = "SELECT * FROM companies WHERE LOWER(name) = ?";
-	private static final String SQL_SAVE = "UPDATE companies SET ownerId = ?, name = ?, money = ? WHERE id = ?";
+	private static final String SQL_SAVE = "UPDATE companies SET ownerId = ?, name = ?, money = ?, description = ? WHERE id = ?";
 	private static final String SQL_DELETE = "DELETE FROM companies WHERE id = ?";
 
 	public final int id;
 	public UUID ownerId;
 	public String name;
 	public BigDecimal money;
+	public String description;
 	public final Timestamp registerDate;
 	public Timestamp editDate;
 
@@ -32,6 +33,7 @@ public class Company {
 		this.ownerId = UUID.fromString(resultSet.getString("ownerId"));
 		this.name = resultSet.getString("name");
 		this.money = resultSet.getBigDecimal("money");
+		this.description = resultSet.getString("description");
 		this.registerDate = resultSet.getTimestamp("registerDate");
 		this.editDate = resultSet.getTimestamp("editDate");
 	}
@@ -43,6 +45,7 @@ public class Company {
 			statement.setString(1, this.ownerId.toString());
 			statement.setString(2, this.name.trim());
 			statement.setBigDecimal(3, this.money);
+			statement.setString(4, this.description);
 
 			int numRows = statement.executeUpdate();
 			statement.close();

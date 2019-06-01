@@ -10,7 +10,7 @@
             "label": "Move Plugin",
             "type": "shell",
             "dependsOn": "Package",
-            "command": "mv ./target/MinecraftRoleplay*.jar ./test_server/plugins/MinecraftRoleplay.jar",
+            "command": "mv ./target/MinecraftRoleplay*-jar-with-dependencies.jar ./test_server/plugins/MinecraftRoleplay.jar",
             "group": "build",
         },
         {

@@ -1,12 +1,17 @@
 package se.wiklund.minecraftroleplay.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang.WordUtils;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.BookMeta;
 
 import se.wiklund.minecraftroleplay.Database;
 import se.wiklund.minecraftroleplay.Main;
@@ -14,17 +19,20 @@ import se.wiklund.minecraftroleplay.constants.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyUtils;
 import se.wiklund.minecraftroleplay.models.Company;
 import se.wiklund.minecraftroleplay.utils.ArrayUtils;
+import se.wiklund.minecraftroleplay.utils.BookUtils;
 import se.wiklund.minecraftroleplay.utils.Error;
+import se.wiklund.minecraftroleplay.utils.JsonUtils;
 import se.wiklund.minecraftroleplay.utils.StringUtils;
 
 public class CompanyCommand implements CommandExecutor {
 
 	private static final String[][] COMMAND_DESCRIPTIONS = new String[][] {
-		new String[] { "company list", "List your companies" },
-		new String[] { "company info <Name>", "See detailed information about a company" },
-		new String[] { "company register <Name>", "Register a new company" },
-		new String[] { "company deregister <Name>", "Deregister a company" },
-	};
+			new String[] { "company list", "List your companies" },
+			new String[] { "company info <Name>", "See company info" },
+			new String[] { "company info <Name>", "See detailed information about your company" },
+			new String[] { "company register <Name>", "Register a new company" },
+			new String[] { "company deregister <Name>", "Deregister a company" },
+		};
 
 	private Main main;
 
@@ -77,6 +85,22 @@ public class CompanyCommand implements CommandExecutor {
 			String companyName = ArrayUtils.flattenStringArray(args, 1).trim();
 
 			if (action.equalsIgnoreCase("info")) {
+				Company company = Company.getByName(companyName, database);
+				if (company == null) {
+					Error.send(sender, "A company with that name does not exist!");
+					return true;
+				}
+
+				ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);
+				BookMeta meta = (BookMeta) book.getItemMeta();
+				BookUtils.setPages(meta, new ArrayList<String>(Arrays.asList(JsonUtils.splitJsonArrayString(company.description))));
+				book.setItemMeta(meta);
+				BookUtils.openBook(book, player);
+				
+				return true;
+			}
+
+			if (action.equalsIgnoreCase("details")) {
 				Company company = Company.getByName(companyName, database);
 				if (company == null) {
 					Error.send(sender, "A company with that name does not exist!");
