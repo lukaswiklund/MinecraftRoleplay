@@ -1,6 +1,5 @@
 package se.wiklund.minecraftroleplay.listeners;
 
-import java.sql.Timestamp;
 import java.time.Instant;
 
 import org.bukkit.event.EventHandler;
