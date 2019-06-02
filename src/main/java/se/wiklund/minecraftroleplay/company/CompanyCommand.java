@@ -117,11 +117,12 @@ public class CompanyCommand implements CommandExecutor {
 					return true;
 				}
 
-				String[] pages = BookTemplateUtils.getPagesFromTemplate("company_details", new HashMap<String, String>() {{
-					put("[name]", company.name);
-					put("[money]", MoneyUtils.getMoneyDisplay(company.money, main.getConfig()));
-					put("[registerDate]", DateTimeUtils.formatDate(company.registerDate, FormatStyle.MEDIUM, main.getTimeZone(), main.getLocale()));
-				}}, main);
+				HashMap<String, String> parameters = new HashMap<>();
+				parameters.put("[name]", company.name);
+				parameters.put("[money]", MoneyUtils.getMoneyDisplay(company.money, main.getConfig()));
+				parameters.put("[registerDate]", DateTimeUtils.formatDate(company.registerDate, FormatStyle.MEDIUM, main.getTimeZone(), main.getLocale()));
+
+				String[] pages = BookTemplateUtils.getPagesFromTemplate("company_details", parameters, main);
 
 				if (pages == null) return true;
 
