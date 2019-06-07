@@ -17,7 +17,7 @@
             "label": "Start Test Server",
             "type": "shell",
             "dependsOn": "Move Plugin",
-            "command": "cd ./test_server && java -Xms2G -Xmx4G -jar server.jar nogui",
+            "command": "cd ./test_server && java -Xms2G -Xmx4G -DIReallyKnowWhatIAmDoingISwear -jar server.jar nogui",
             "group": {
                 "kind": "build",
                 "isDefault": true,
