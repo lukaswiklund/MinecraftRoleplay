@@ -1,9 +1,11 @@
 Locale: "en_US"
 TimeZone: "GMT"
 
+
 Currency_Unit: $
 Currency_PlaceBefore: true
 Currency_SpaceBetween: false
+
 
 Text_CommandInfoTitle: §2[command] commands
 Text_CommandInfoSeparatorColor: §2
@@ -11,11 +13,13 @@ Text_CommandInfoDescription: §2[command] §e- [commandDescription]
 Text_PlayerMoney: "§2Your balance: §e[money]"
 Text_PlayerMoneySet: "§2You set §e[targetPlayer]§2's money to: §e[money]"
 Text_PlayerMoneySetTarget: "§2Your money was set to: §e[money]"
+
 Text_CompanyRegistered: "§2You registered a company with name: §e[companyName]"
-Text_NoCompanies: "§cYou don't have any registered companies!"
+Text_NoCompanies: "§cYou don't have any registered companies."
 Text_YourCompanies: "§2Your companies"
 Text_CompanyListItem: "§2 - §e[companyName]§2 - §e[companyMoney]"
 Text_CompanyDeregistered: "§2You deregistered your company: §e[companyName]"
+
 
 MySQL_Host: localhost
 MySQL_Port: 3306
