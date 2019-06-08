@@ -8,6 +8,7 @@ import java.util.Locale;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import se.wiklund.minecraftroleplay.company.CompanyCommand;
+import se.wiklund.minecraftroleplay.company.CompanyTabCompleter;
 import se.wiklund.minecraftroleplay.constants.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyCommand;
 import se.wiklund.minecraftroleplay.listeners.NewPlayerListener;
@@ -38,6 +39,8 @@ public class Main extends JavaPlugin {
 
 		getCommand("money").setExecutor(new MoneyCommand(this));
 		getCommand("company").setExecutor(new CompanyCommand(this));
+
+		getCommand("company").setTabCompleter(new CompanyTabCompleter(this));
 
 		getLogger().info("MinecraftRoleplay --> Enabled");
 	}

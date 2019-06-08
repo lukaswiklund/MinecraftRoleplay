@@ -16,7 +16,8 @@ public class Company {
 	private static final String SQL_CREATE = "INSERT INTO companies(ownerId, name) VALUES(?, ?)";
 	private static final String SQL_GET_BY_ID = "SELECT * FROM companies WHERE id = ? LIMIT 1";
 	private static final String SQL_GET_BY_OWNER_ID = "SELECT * FROM companies WHERE ownerId = ?";
-	private static final String SQL_GET_BY_NAME = "SELECT * FROM companies WHERE LOWER(name) = ?";
+	private static final String SQL_GET_BY_NAME = "SELECT * FROM companies WHERE LOWER(name) = ? LIMIT 1";
+	private static final String SQL_GET_ALL = "SELECT * FROM companies";
 	private static final String SQL_SAVE = "UPDATE companies SET ownerId = ?, name = ?, money = ?, description = ? WHERE id = ?";
 	private static final String SQL_DELETE = "DELETE FROM companies WHERE id = ?";
 
@@ -107,9 +108,7 @@ public class Company {
 			statement.setString(1, ownerId.toString());
 			ResultSet resultSet = statement.executeQuery();
 			List<Company> companies = new ArrayList<>();
-			while (resultSet.next())
-				companies.add(new Company(resultSet));
-
+			while (resultSet.next()) companies.add(new Company(resultSet));
 			statement.close();
 			return companies;
 		} catch (SQLException e) {
@@ -127,6 +126,20 @@ public class Company {
 			if (resultSet.next()) company = new Company(resultSet);
 			statement.close();
 			return company;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public static List<Company> getAll(Database database) {
+		try {
+			PreparedStatement statement = database.getConnection().prepareStatement(SQL_GET_ALL);
+			ResultSet resultSet = statement.executeQuery();
+			List<Company> companies = new ArrayList<>();
+			while (resultSet.next()) companies.add(new Company(resultSet));
+			statement.close();
+			return companies;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
