@@ -4,27 +4,4 @@ main: se.wiklund.minecraftroleplay.Main
 
 commands:
   money:
-    usage: /money
-    description: See your bank balance
-  money set:
-    usage: /money set <player> <balance>
-    description: Sets a player's bank balance
-
   company:
-    usage: /company
-    description: Manage your companies
-  company list:
-    usage: /company list
-    description: Lists your companies
-  company info <company>:
-    usage: /company list <company>
-    description: See company info
-  company details <company>:
-    usage: /company details <company>
-    description: See detailed information about your company
-  company register <name>:
-    usage: /company register <name>
-    description: Register a new company
-  company deregister <name>:
-    usage: /company deregister <name>
-    description: Deregister a company
