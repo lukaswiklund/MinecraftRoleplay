@@ -89,7 +89,7 @@ public class CompanyCommand implements CommandExecutor {
 			if (action.equalsIgnoreCase("info")) {
 				Company company = Company.getByName(companyName, database);
 				if (company == null) {
-					Error.send(sender, "A company with that name does not exist!");
+					Error.send(sender, Error.COMPANY_NOT_EXIST);
 					return true;
 				}
 
@@ -109,11 +109,11 @@ public class CompanyCommand implements CommandExecutor {
 			if (action.equalsIgnoreCase("details")) {
 				Company company = Company.getByName(companyName, database);
 				if (company == null) {
-					Error.send(sender, "A company with that name does not exist!");
+					Error.send(sender, Error.COMPANY_NOT_EXIST);
 					return true;
 				}
 				if (!company.ownerId.equals(player.getUniqueId())) {
-					Error.send(sender, "You don't own that company!");
+					Error.send(sender, Error.COMPANY_NOT_OWNER);
 					return true;
 				}
 
@@ -138,11 +138,11 @@ public class CompanyCommand implements CommandExecutor {
 			if (action.equalsIgnoreCase("register")) {
 				Company conflictCompany = Company.getByName(companyName, database);
 				if (conflictCompany != null) {
-					Error.send(sender, "A company with that name already exists!");
+					Error.send(sender, Error.COMPANY_ALREADY_EXISTS);
 					return true;
 				}
 				if (!Company.create(player.getUniqueId(), companyName, database)) {
-					Error.send(sender, "Failed to register company!");
+					Error.send(sender, "Failed to register company.");
 					return true;
 				}
 				String messageTemplate = main.getConfig().getString(ConfigConstants.Text.COMPANY_REGISTERED);
@@ -153,15 +153,15 @@ public class CompanyCommand implements CommandExecutor {
 			if (action.equalsIgnoreCase("deregister")) {
 				Company company = Company.getByName(companyName, database);
 				if (company == null) {
-					Error.send(sender, "A company with that name does not exist!");
+					Error.send(sender, Error.COMPANY_NOT_EXIST);
 					return true;
 				}
 				if (!company.ownerId.equals(player.getUniqueId())) {
-					Error.send(sender, "You don't own this company!");
+					Error.send(sender, Error.COMPANY_NOT_OWNER);
 					return true;
 				}
 				if (!company.delete(database)) {
-					Error.send(sender, "Failed to deregister company!");
+					Error.send(sender, "Failed to deregister company.");
 					return true;
 				}
 				String messageTemplate = main.getConfig().getString(ConfigConstants.Text.COMPANY_DEREGISTERED);

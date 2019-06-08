@@ -9,6 +9,9 @@ public class Error {
 	public static final Error NOT_PLAYER = new Error("You have to be a player in order to execute this command.");
 	public static final Error PLAYER_NOT_EXIST = new Error("That player does not exist, or is not online.");
 	public static final Error NUMBER_PARSE_ERROR = new Error("You have to enter a number.");
+	public static final Error COMPANY_NOT_EXIST = new Error("A company with that name does not exist.");
+	public static final Error COMPANY_NOT_OWNER = new Error("You don't own that company.");
+	public static final Error COMPANY_ALREADY_EXISTS = new Error("A company with that name already exists.");
 
 	private String message;
 
