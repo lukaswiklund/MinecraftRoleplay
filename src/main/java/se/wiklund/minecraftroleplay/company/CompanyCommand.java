@@ -19,12 +19,12 @@ import se.wiklund.minecraftroleplay.Main;
 import se.wiklund.minecraftroleplay.constants.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyUtils;
 import se.wiklund.minecraftroleplay.models.Company;
-import se.wiklund.minecraftroleplay.utils.ArrayUtils;
-import se.wiklund.minecraftroleplay.utils.BookTemplateUtils;
-import se.wiklund.minecraftroleplay.utils.BookUtils;
-import se.wiklund.minecraftroleplay.utils.DateTimeUtils;
-import se.wiklund.minecraftroleplay.utils.Error;
-import se.wiklund.minecraftroleplay.utils.JsonUtils;
+import se.wiklund.minecraftroleplay.util.ArrayUtils;
+import se.wiklund.minecraftroleplay.util.BookTemplateUtils;
+import se.wiklund.minecraftroleplay.util.BookUtils;
+import se.wiklund.minecraftroleplay.util.DateTimeUtils;
+import se.wiklund.minecraftroleplay.util.Error;
+import se.wiklund.minecraftroleplay.util.JsonUtils;
 
 public class CompanyCommand implements CommandExecutor {
 

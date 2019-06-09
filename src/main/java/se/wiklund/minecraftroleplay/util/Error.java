@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.utils;
+package se.wiklund.minecraftroleplay.util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.utils;
+package se.wiklund.minecraftroleplay.util;
 
 public class ArrayUtils {
 

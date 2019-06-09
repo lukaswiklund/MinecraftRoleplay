@@ -11,7 +11,7 @@ import se.wiklund.minecraftroleplay.Main;
 import se.wiklund.minecraftroleplay.constants.ConfigConstants;
 import se.wiklund.minecraftroleplay.constants.PermissionConstants;
 import se.wiklund.minecraftroleplay.models.Account;
-import se.wiklund.minecraftroleplay.utils.Error;
+import se.wiklund.minecraftroleplay.util.Error;
 
 public class MoneyCommand implements CommandExecutor {
 

@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.utils;
+package se.wiklund.minecraftroleplay.util;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 
-import se.wiklund.minecraftroleplay.utils.ReflectionUtils.PackageType;
+import se.wiklund.minecraftroleplay.util.ReflectionUtils.PackageType;
 
 /**
  * Create a "Virtual" book gui that doesn't require the user to have a book in
