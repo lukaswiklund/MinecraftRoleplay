@@ -27,7 +27,7 @@ public class Main extends JavaPlugin {
 			database = new Database(this);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
-			getLogger().severe("Failed to setup to database. Disabling plugin...");
+			getLogger().severe("Failed to connect to database. Disabling plugin...");
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
