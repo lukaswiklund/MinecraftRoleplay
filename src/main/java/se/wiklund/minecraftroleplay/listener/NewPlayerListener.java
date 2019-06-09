@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import se.wiklund.minecraftroleplay.Database;
-import se.wiklund.minecraftroleplay.models.Account;
+import se.wiklund.minecraftroleplay.model.Account;
 
 public class NewPlayerListener implements Listener {
 

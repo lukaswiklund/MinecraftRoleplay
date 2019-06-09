@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import se.wiklund.minecraftroleplay.Main;
 import se.wiklund.minecraftroleplay.constant.ConfigConstants;
 import se.wiklund.minecraftroleplay.constant.PermissionConstants;
-import se.wiklund.minecraftroleplay.models.Account;
+import se.wiklund.minecraftroleplay.model.Account;
 import se.wiklund.minecraftroleplay.util.Error;
 
 public class MoneyCommand implements CommandExecutor {

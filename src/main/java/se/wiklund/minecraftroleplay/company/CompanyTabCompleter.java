@@ -10,7 +10,7 @@ import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import se.wiklund.minecraftroleplay.Main;
-import se.wiklund.minecraftroleplay.models.Company;
+import se.wiklund.minecraftroleplay.model.Company;
 
 public class CompanyTabCompleter implements TabCompleter {
 

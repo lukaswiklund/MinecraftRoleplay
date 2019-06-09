@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.models;
+package se.wiklund.minecraftroleplay.model;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
