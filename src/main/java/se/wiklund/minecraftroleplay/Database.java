@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import se.wiklund.minecraftroleplay.constants.ConfigConstants;
+import se.wiklund.minecraftroleplay.constant.ConfigConstants;
 
 public class Database {
 

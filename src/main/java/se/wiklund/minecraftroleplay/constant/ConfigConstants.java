@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.constants;
+package se.wiklund.minecraftroleplay.constant;
 
 public class ConfigConstants {
 

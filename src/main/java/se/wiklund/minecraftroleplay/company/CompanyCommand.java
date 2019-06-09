@@ -16,7 +16,7 @@ import org.bukkit.inventory.meta.BookMeta;
 
 import se.wiklund.minecraftroleplay.Database;
 import se.wiklund.minecraftroleplay.Main;
-import se.wiklund.minecraftroleplay.constants.ConfigConstants;
+import se.wiklund.minecraftroleplay.constant.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyUtils;
 import se.wiklund.minecraftroleplay.models.Company;
 import se.wiklund.minecraftroleplay.util.ArrayUtils;

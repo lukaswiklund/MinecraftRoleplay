@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import se.wiklund.minecraftroleplay.constants.ConfigConstants;
+import se.wiklund.minecraftroleplay.constant.ConfigConstants;
 
 public class MoneyUtils {
 

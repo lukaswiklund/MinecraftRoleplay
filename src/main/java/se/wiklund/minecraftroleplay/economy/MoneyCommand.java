@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import se.wiklund.minecraftroleplay.Main;
-import se.wiklund.minecraftroleplay.constants.ConfigConstants;
-import se.wiklund.minecraftroleplay.constants.PermissionConstants;
+import se.wiklund.minecraftroleplay.constant.ConfigConstants;
+import se.wiklund.minecraftroleplay.constant.PermissionConstants;
 import se.wiklund.minecraftroleplay.models.Account;
 import se.wiklund.minecraftroleplay.util.Error;
 
