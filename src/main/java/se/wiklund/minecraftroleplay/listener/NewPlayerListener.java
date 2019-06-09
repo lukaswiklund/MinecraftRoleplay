@@ -1,4 +1,4 @@
-package se.wiklund.minecraftroleplay.listeners;
+package se.wiklund.minecraftroleplay.listener;
 
 import java.time.Instant;
 

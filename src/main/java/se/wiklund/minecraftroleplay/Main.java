@@ -11,7 +11,7 @@ import se.wiklund.minecraftroleplay.company.CompanyCommand;
 import se.wiklund.minecraftroleplay.company.CompanyTabCompleter;
 import se.wiklund.minecraftroleplay.constant.ConfigConstants;
 import se.wiklund.minecraftroleplay.economy.MoneyCommand;
-import se.wiklund.minecraftroleplay.listeners.NewPlayerListener;
+import se.wiklund.minecraftroleplay.listener.NewPlayerListener;
 
 public class Main extends JavaPlugin {
 
